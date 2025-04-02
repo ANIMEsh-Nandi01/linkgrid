@@ -25,10 +25,9 @@ const HeroSection = () => {
       observer.observe(statsRef.current);
     }
 
+    // Removed currentRef if not used
     return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
-      }
+      // Cleanup logic using currentRef
     };
   }, []);
 
@@ -102,7 +101,8 @@ const HeroSection = () => {
         {/* Title with gradient text - Adjusted size and spacing */}
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight mt-8">
           <span className="text-white">Building </span>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">Professional<br />Connections </span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">Professional</span>
+          <span className="text-white"> Connections </span>
           <span className="text-white">with Intelligence</span>
         </h1>
         

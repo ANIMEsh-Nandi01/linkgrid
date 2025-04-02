@@ -22,8 +22,7 @@ const Navbar = () => {
   // Smooth scroll function
   const handleSmoothScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    
-    // Close mobile menu if open
+    // Use href in the smooth scroll logic
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }

@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 const TestimonialSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const marqueeRef = useRef<HTMLDivElement>(null);
   
   const testimonials = [

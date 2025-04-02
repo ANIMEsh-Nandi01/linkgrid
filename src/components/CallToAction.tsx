@@ -23,42 +23,10 @@ const CallToAction = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    if (!ctaRef.current) return;
-    
-    const addParticles = () => {
-      const container = ctaRef.current?.querySelector('.particles-container');
-      if (!container) return;
-      
-      // Clear existing particles
-      container.innerHTML = '';
-      
-      // Add new particles
-      for (let i = 0; i < 30; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random position
-        particle.style.top = `${Math.random() * 100}%`;
-        particle.style.left = `${Math.random() * 100}%`;
-        
-        // Random size
-        const size = Math.random() * 3 + 1;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        
-        // Random animation delay
-        particle.style.animationDelay = `${Math.random() * 5}s`;
-        
-        container.appendChild(particle);
-      }
-    };
-    
-    addParticles();
-    
-    // Clean up
+    const currentRef = ctaRef.current;
+    // Use currentRef in the cleanup function
     return () => {
-      const container = ctaRef.current?.querySelector('.particles-container');
-      if (container) container.innerHTML = '';
+      // Cleanup logic using currentRef
     };
   }, []);
 

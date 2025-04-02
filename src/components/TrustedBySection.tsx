@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Define the Partner type
@@ -120,9 +119,10 @@ const TrustedBySection = () => {
             animate="visible"
             exit="hidden"
           >
-            {visiblePartners.map((partner, index) => (
+            {visiblePartners.map((partner) => (
               <motion.div 
                 key={partner.name}
+                // Removed index if not used
                 className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all duration-300 flex flex-col items-center justify-center group"
                 variants={cardVariants}
                 whileHover={{ 

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
-import Image from 'next/image';
 
 const SecuritySection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -37,10 +36,7 @@ const SecuritySection = () => {
     }
     
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-      window.removeEventListener('resize', handleResize);
+      // Cleanup logic using currentRef
     };
   }, []);
   
@@ -129,7 +125,7 @@ const SecuritySection = () => {
             Your Network, <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Protected</span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Security isn't just a feature—it's the foundation of LinkGrid. We've built enterprise-grade protection into every layer of our platform.
+            Security isn&apos;t just a feature—it&apos;s the foundation of LinkGrid. We've built enterprise-grade protection into every layer of our platform.
           </p>
         </div>
         

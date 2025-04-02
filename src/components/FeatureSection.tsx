@@ -1,31 +1,31 @@
 "use client";
- 
+
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 
 const FeatureSection = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  
+
   useEffect(() => {
+    const currentRef = featuresRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsVisible(true);
         } else {
-          setIsVisible(false); // Reset animation when section is out of view
+          setIsVisible(false);
         }
       },
       { threshold: 0.1 }
     );
-    
-    if (featuresRef.current) {
-      observer.observe(featuresRef.current);
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-    
+
     return () => {
-      if (featuresRef.current) {
-        observer.unobserve(featuresRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

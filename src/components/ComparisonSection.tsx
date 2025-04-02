@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import React from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
 const ComparisonSection = () => {
   // Comparison data between LinkGrid and traditional platforms
